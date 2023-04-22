@@ -1,0 +1,17 @@
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.HttpApi.Client.deps.json
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.HttpApi.Client.dll
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.HttpApi.Client.pdb
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.Application.Contracts.dll
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.Domain.Shared.dll
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.Application.Contracts.pdb
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\bin\Debug\net6.0\ManagerSys.Domain.Shared.pdb
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.csproj.AssemblyReference.cache
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.GeneratedMSBuildEditorConfig.editorconfig
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.AssemblyInfoInputs.cache
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.AssemblyInfo.cs
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.csproj.CoreCompileInputs.cache
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.csproj.CopyComplete
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.dll
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\refint\ManagerSys.HttpApi.Client.dll
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ManagerSys.HttpApi.Client.pdb
+I:\个人\ManagerSys\ManagerSys.HttpApi.Client\obj\Debug\net6.0\ref\ManagerSys.HttpApi.Client.dll

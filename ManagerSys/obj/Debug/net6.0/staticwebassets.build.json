@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "q/CJUU1HBw1gnfEh6MYwpsvLGoi6C4uDYeo6tgquHlc=",
+  "Source": "ManagerSys.Host",
+  "BasePath": "_content/ManagerSys.Host",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,12 @@
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.deps.json
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.pdb
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.csproj.AssemblyReference.cache
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.GeneratedMSBuildEditorConfig.editorconfig
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.AssemblyInfoInputs.cache
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.AssemblyInfo.cs
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.csproj.CoreCompileInputs.cache
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\refint\ManagerSys.EntityFrameworkCore.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.pdb
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ref\ManagerSys.EntityFrameworkCore.dll
