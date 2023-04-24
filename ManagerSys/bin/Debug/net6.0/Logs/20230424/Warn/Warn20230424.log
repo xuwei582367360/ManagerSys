@@ -1,0 +1,13 @@
+11:09 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:18 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:20 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:24 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:26 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:30 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:33 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:35 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+11:37 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+16:02 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+16:15 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+16:25 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
+16:28 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
