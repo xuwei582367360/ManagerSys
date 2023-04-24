@@ -365,3 +365,6 @@ ManagerSys/obj/Debug/net6.0/ManagerSys.Host.csproj.FileListAbsolute.txt
 *.txt
 ManagerSys.Application.Contracts/obj/Debug/net6.0/ManagerSys.Application.Contracts.csproj.FileListAbsolute.txt
 *.cache
+*.cache
+*.dll
+*.pdb

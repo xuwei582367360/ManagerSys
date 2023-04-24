@@ -29,7 +29,9 @@ namespace ManagerSys.EntityFrameworkCore
          */
 
         //Identity
-        public DbSet<AreaEntity> Users { get; set; }
+        //public DbSet<AreaEntity> Users { get; set; }
+
+        public DbSet<UserInfo> UserInfos { get; set; }
         #endregion
         public CDZLSDbContext(DbContextOptions<CDZLSDbContext> options)
             : base(options)

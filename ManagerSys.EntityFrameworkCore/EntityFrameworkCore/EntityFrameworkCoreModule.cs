@@ -37,7 +37,7 @@ namespace ManagerSys.EntityFrameworkCore
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
                 options.AddDefaultRepositories(includeAllEntities: true);
-            }); ;
+            });
 
             Configure<AbpDbContextOptions>(options =>
             {
@@ -47,11 +47,11 @@ namespace ManagerSys.EntityFrameworkCore
                 {
                     if (ctx.ExistingConnection != null)
                     {
-                        ctx.DbContextOptions.UseOracle(ctx.ExistingConnection);
+                        ctx.DbContextOptions.UseSqlServer(ctx.ExistingConnection);
                     }
                     else
                     {
-                        ctx.DbContextOptions.UseOracle(ctx.ConnectionString);
+                        ctx.DbContextOptions.UseSqlServer(ctx.ConnectionString);
                     }
                 });
             });

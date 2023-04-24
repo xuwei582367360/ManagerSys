@@ -18,7 +18,7 @@ namespace ManagerSys.EntityFrameworkCore
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<CDZLSTestDbContext>()
-                .UseOracle(configuration.GetConnectionString("CDZLSTest"));
+                .UseSqlServer(configuration.GetConnectionString("CDZLSTest"));
 
             return new CDZLSTestDbContext(builder.Options);
         }

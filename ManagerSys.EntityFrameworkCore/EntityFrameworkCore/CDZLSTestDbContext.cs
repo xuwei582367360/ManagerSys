@@ -1,4 +1,5 @@
 ﻿using ManagerSys.Domian.CDZLS;
+using ManagerSys.Domian.Order;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace ManagerSys.EntityFrameworkCore
     public class CDZLSTestDbContext : AbpDbContext<CDZLSTestDbContext>
     {
 
-
+        public DbSet<OrderInfo> OrderInfo { get; set; }
         public CDZLSTestDbContext(DbContextOptions<CDZLSTestDbContext> options)
             : base(options)
         {
