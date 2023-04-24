@@ -6,10 +6,10 @@ namespace ManagerSys.EntityFrameworkCore.Tests
 {
     public class Tests
     {
-        private readonly IRepository<AreaEntity, Guid> _appUserRepository;
+        private readonly IRepository<AreaEntity, long> _appUserRepository;
 
 
-        public Tests(IRepository<AreaEntity, Guid> appUserRepository)
+        public Tests(IRepository<AreaEntity, long> appUserRepository)
         {
             _appUserRepository = appUserRepository;
         }
