@@ -172,3 +172,12 @@ F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.
 F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.pdb
 F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.genruntimeconfig.cache
 F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ref\ManagerSys.EntityFrameworkCore.Tests.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.csproj.AssemblyReference.cache
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.GeneratedMSBuildEditorConfig.editorconfig
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.AssemblyInfoInputs.cache
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.AssemblyInfo.cs
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.csproj.CoreCompileInputs.cache
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\refint\ManagerSys.EntityFrameworkCore.Tests.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.pdb

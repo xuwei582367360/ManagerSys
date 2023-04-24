@@ -27,3 +27,8 @@ F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\Mana
 F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\refint\ManagerSys.EntityFrameworkCore.dll
 F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.pdb
 F:\徐玮\私人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ref\ManagerSys.EntityFrameworkCore.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.Domain.Shared.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.Domian.dll
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.Domian.pdb
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.Domain.Shared.pdb
+I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.csproj.CopyComplete
