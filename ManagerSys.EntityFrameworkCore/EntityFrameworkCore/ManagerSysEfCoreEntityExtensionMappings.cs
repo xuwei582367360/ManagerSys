@@ -15,6 +15,14 @@ namespace ManagerSys.EntityFrameworkCore
 
             OneTimeRunner.Run(() =>
             {
+                ObjectExtensionManager.Instance
+                        .MapEfCoreProperty<IdentityUser, string>(
+                            "MyProperty",
+                            (entityBuilder, propertyBuilder) =>
+                            {
+                                propertyBuilder.HasMaxLength(128);
+                            }
+                        );
                 /* You can configure extra properties for the
                  * entities defined in the modules used by your application.
                  *

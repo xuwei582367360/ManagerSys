@@ -999,3 +999,12 @@ I:\个人\ManagerSys\ManagerSys\obj\Debug\net6.0\refint\ManagerSys.Host.dll
 I:\个人\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.pdb
 I:\个人\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.genruntimeconfig.cache
 I:\个人\ManagerSys\ManagerSys\obj\Debug\net6.0\ref\ManagerSys.Host.dll
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.csproj.AssemblyReference.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.GeneratedMSBuildEditorConfig.editorconfig
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.AssemblyInfoInputs.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.AssemblyInfo.cs
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.csproj.CoreCompileInputs.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.MvcApplicationPartsAssemblyInfo.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.dll
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\refint\ManagerSys.Host.dll
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys\obj\Debug\net6.0\ManagerSys.Host.pdb

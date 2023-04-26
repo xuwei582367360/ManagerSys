@@ -24,7 +24,7 @@ namespace ManagerSys.EntityFrameworkCore
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAbpDbContext<CDZLSDbContext>(options =>
+            context.Services.AddAbpDbContext<ScheDbContext>(options =>
             {
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
@@ -32,7 +32,7 @@ namespace ManagerSys.EntityFrameworkCore
             }
             );
 
-            context.Services.AddAbpDbContext<CDZLSTestDbContext>(options =>
+            context.Services.AddAbpDbContext<BusDbContext>(options =>
             {
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */

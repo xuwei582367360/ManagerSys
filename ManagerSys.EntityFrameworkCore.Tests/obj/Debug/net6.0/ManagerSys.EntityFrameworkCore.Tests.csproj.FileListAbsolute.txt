@@ -346,3 +346,12 @@ I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\refin
 I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.pdb
 I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.genruntimeconfig.cache
 I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ref\ManagerSys.EntityFrameworkCore.Tests.dll
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.csproj.AssemblyReference.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.GeneratedMSBuildEditorConfig.editorconfig
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.AssemblyInfoInputs.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.AssemblyInfo.cs
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.csproj.CoreCompileInputs.cache
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.dll
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\refint\ManagerSys.EntityFrameworkCore.Tests.dll
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore.Tests\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.Tests.pdb

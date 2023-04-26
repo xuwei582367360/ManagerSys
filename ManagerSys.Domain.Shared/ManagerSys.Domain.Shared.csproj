@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Options\**" />
+    <EmbeddedResource Remove="Options\**" />
+    <None Remove="Options\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LogDashboard" Version="1.4.8" />
     <PackageReference Include="Serilog" Version="2.12.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
@@ -20,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Localization\MyLocalization\" />
-    <Folder Include="Options\" />
   </ItemGroup>
 
 </Project>
