@@ -12,7 +12,7 @@ using Volo.Abp.Domain.Entities;
 namespace ManagerSys.Domian.Business
 {
     [Table("SystemUsers")]
-    public class SystemUserEntity : BaseEntity
+    public class SystemUserEntity : BaseEntity<int>
     {
         [Key]
         [Column("Id")]
@@ -20,31 +20,31 @@ namespace ManagerSys.Domian.Business
 
         [Required, MaxLength(50)]
         [Column("UserCode")]
-        public string UserCode { get; set; }
+        public string? UserCode { get; set; }
 
         [Required, MaxLength(50)]
         [Column("Username")]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
         [Required, MaxLength(50)]
         [Column("Password")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         [Required, MaxLength(50)]
         [Column("RealName")]
-        public string RealName { get; set; }
+        public string? RealName { get; set; }
 
         [MaxLength(15)]
         [Column("Phone")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         [MaxLength(500), EmailAddress(ErrorMessage = "邮箱格式错误")]
         [Column("Email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [Column("Status")]
-        public int Status { get; set; }
+        public int? Status { get; set; }
 
         [Column("LastLoginTime")]
         public DateTime? LastLoginTime { get; set; }

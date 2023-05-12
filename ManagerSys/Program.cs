@@ -24,13 +24,14 @@ builder.Host
     .AddAppSettingsSecretsJson()
     .UseAutofac();
 //.UseSerilog();
-await builder.AddApplicationAsync<HttpApiHostModule>();
+
 #region  ƒ¨»œconfig
 IConfiguration configuration = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json")
                             .Build();
 builder.Services.AddSingleton(new Config(configuration));
 #endregion
+await builder.AddApplicationAsync<HttpApiHostModule>();
 //Serilog≈‰÷√
 SerilogMiddleware.Serilog(builder);
 var app = builder.Build();

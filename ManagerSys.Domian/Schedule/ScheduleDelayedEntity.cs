@@ -113,32 +113,6 @@ namespace ManagerSys.Domian.Schedule
         [Column("NotifyBody")]
         public string NotifyBody { get; set; }
 
-        [MaxLength(50)]
-        [Column("CreateUserCode")]
-        public string CreateUserCode { get; set; }
-
-        [MaxLength(50)]
-        [Column("CreateUser")]
-        public string CreateUser { get; set; }
-
-        [MaxLength(50)]
-        [Column("CreateTime")]
-        public DateTime CreateTime { get; set; }
-
-        [MaxLength(50)]
-        [Column("UpdateUserCode")]
-        public string UpdateUserCode { get; set; }
-
-        [MaxLength(50)]
-        [Column("UpdateUser")]
-        public string UpdateUser { get; set; }
-
-        [MaxLength(50)]
-        [Column("UpdateTime")]
-        public DateTime UpdateTime { get; set; }
-
-        [Column("IsDeleted")]
-        public bool IsDeleted { get; set; }
     }
 
     /// <summary>

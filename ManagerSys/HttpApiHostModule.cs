@@ -20,6 +20,8 @@ using ManagerSys.Host.Route;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using IGeekFan.AspNetCore.Knife4jUI;
+using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace ManagerSys.Host
 {
@@ -141,13 +143,38 @@ namespace ManagerSys.Host
 
         private static void ConfigureSwaggerServices(ServiceConfigurationContext context, IConfiguration configuration)
         {
-            context.Services.AddAbpSwaggerGen(options =>
+
+            //context.Services.AddAbpSwaggerGen(options =>
+            //{
+            //    options.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagerSys API", Version = "v1" });
+            //    options.DocInclusionPredicate((docName, description) => true);
+            //    options.CustomSchemaIds(type => type.FullName);
+            //}
+            //);
+            context.Services.AddSwaggerGen(options =>
             {
+                var files = Directory.GetFiles(AppContext.BaseDirectory, "*.xml");
+                foreach (var item in files)
+                {
+                    if (!string.IsNullOrEmpty(item))
+                        options.IncludeXmlComments(Path.Combine(item), true);
+                }
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagerSys API", Version = "v1" });
-                options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
-            }
-            );
+                //options.OperationFilter<SwaggerHanderFilter>();
+                options.AddServer(new OpenApiServer()
+                {
+
+                    Url = "",
+                    Description = "vvv"
+                });
+                options.CustomOperationIds(apidesc =>
+                {
+                    var controllAction = apidesc.ActionDescriptor as ControllerActionDescriptor;
+                    return controllAction?.ControllerName + "-" + controllAction?.ActionName;
+                });
+            });
+
         }
         /// <summary>
         /// 配置本地化
@@ -233,11 +260,24 @@ namespace ManagerSys.Host
             app.UseAuthorization();
 
             app.UseSwagger();
-            app.UseAbpSwaggerUI(options =>
+            //app.UseAbpSwaggerUI(options =>
+            //{
+            //    options.SwaggerEndpoint("/swagger/v1/swagger.json", "ManagerSys API");
+            //});
+            //Swagger使用自定义UI
+            app.UseKnife4UI(c =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "ManagerSys API");
+                c.RoutePrefix = "";
+                c.InjectJavascript("/js/init.js");
+                c.InjectStylesheet("/css/index.css");
+                c.SwaggerEndpoint("/v1/api-docs", "v1docs");
             });
-
+            app.UseConfiguredEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/api/check", () => $"心跳检测成功{DateTime.Now.ToString("yyyy-MM-dd HH:mm:sss")},当前发布时间：2022-08-09 16:17");
+                endpoints.MapControllers();//
+                endpoints.MapSwagger("{documentName}/api-docs");
+            });
             app.UseAuditing();
             app.UseConfiguredEndpoints();
         }

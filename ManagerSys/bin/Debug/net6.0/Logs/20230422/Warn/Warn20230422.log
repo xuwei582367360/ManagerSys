@@ -1,6 +1,0 @@
-11:43 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
-11:57 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
-11:58 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
-11:59 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 
-11:59 || Warning ||  || 测试Warning ||  ||end 
-12:17 || Warning || Microsoft.AspNetCore.Http.ResponseCookies || The cookie '"XSRF-TOKEN"' has set 'SameSite=None' and must also set 'Secure'. ||  ||end 

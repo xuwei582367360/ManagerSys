@@ -8,6 +8,11 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using ManagerSys.Domian;
+using ManagerSys.EntityFrameworkCore.EntityFrameworkCore;
+using ManagerSys.Domain.Shared.ConfigHelper;
 
 namespace ManagerSys.EntityFrameworkCore
 {
@@ -20,6 +25,7 @@ namespace ManagerSys.EntityFrameworkCore
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             ManagerSysEfCoreEntityExtensionMappings.Configure();
+
         }
 
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -41,17 +47,18 @@ namespace ManagerSys.EntityFrameworkCore
 
             Configure<AbpDbContextOptions>(options =>
             {
-                /* The main point to change your DBMS.
-                 * See also BookStoreMigrationsDbContextFactory for EF Core tooling. */
+                string dbTypeString = Config.ReadAppSettings("ConnectionStrings", "Provider") ?? "sqlserver";
                 options.Configure(ctx =>
                 {
                     if (ctx.ExistingConnection != null)
                     {
-                        ctx.DbContextOptions.UseSqlServer(ctx.ExistingConnection);
+                        //ctx.DbContextOptions.UseSqlServer(ctx.ExistingConnection);
+                        ManagerSysContextConfigurer.Configure(ctx, dbTypeString, ctx.ExistingConnection);
                     }
                     else
                     {
-                        ctx.DbContextOptions.UseSqlServer(ctx.ConnectionString);
+                        //ctx.DbContextOptions.UseSqlServer(ctx.ConnectionString);
+                        ManagerSysContextConfigurer.Configure(ctx, dbTypeString, ctx.ConnectionString);
                     }
                 });
             });

@@ -1,0 +1,10 @@
+﻿footer .globalFooter {
+    display: none;
+}
+
+.myglobalFooter {
+    padding: 0 16px;
+    margin: 14px 0 10px 0;
+    text-align: center;
+    color: grey;
+}

@@ -33,6 +33,7 @@ I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\refint\Mana
 I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.pdb
 I:\个人\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ref\ManagerSys.EntityFrameworkCore.dll
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.deps.json
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.runtimeconfig.json
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.dll
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.EntityFrameworkCore.pdb
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\bin\Debug\net6.0\ManagerSys.Domain.Shared.dll
@@ -48,4 +49,5 @@ F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkC
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.dll
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\refint\ManagerSys.EntityFrameworkCore.dll
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.pdb
+F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ManagerSys.EntityFrameworkCore.genruntimeconfig.cache
 F:\徐玮\私人\singleGit\xuwei582367360\ManagerSys\ManagerSys.EntityFrameworkCore\obj\Debug\net6.0\ref\ManagerSys.EntityFrameworkCore.dll

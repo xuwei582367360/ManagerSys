@@ -8,8 +8,19 @@ namespace ManagerSys.Domian
 {
     public static class ManagerSysConsts
     {
-        public const string DbTablePrefix = "App";
+        public const string Provider = "Provider";
 
-        public const string DbSchema = null;
+        public const string DeSchema = null;
+        public const string BusSchema = null;
     }
+
+    public enum AbpBaseDataType
+    {
+        Orcal = 0,
+        Mysql = 1,
+        Sqlserver = 2
+        // 其他数据库
+    }
+
+
 }

@@ -13,7 +13,7 @@ namespace ManagerSys.Domian.Schedule
         /// <summary>
         /// 节点标识
         /// </summary>
-        [Key]
+
         [MaxLength(100)]
         [Column("NodeName")]
         public string NodeName { get; set; }
