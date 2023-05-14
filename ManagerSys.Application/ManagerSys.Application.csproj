@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ManagerSys.Application.Contracts\ManagerSys.Application.Contracts.csproj" />
-    <ProjectReference Include="..\ManagerSys.Domian\ManagerSys.Domian.csproj" />
   </ItemGroup>
 
 </Project>

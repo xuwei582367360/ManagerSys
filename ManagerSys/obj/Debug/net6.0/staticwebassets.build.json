@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i1/xXu69ddjxwlQ676fv5Q34w3ic0fcCQeZeQ7u2e2I=",
+  "Hash": "7l7Qi793w307QPlJhGGOiB3XIMyZ7PHLDhmv6u0BW0I=",
   "Source": "ManagerSys.Host",
   "BasePath": "_content/ManagerSys.Host",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ManagerSys.Host\\wwwroot",
       "Source": "ManagerSys.Host",
-      "ContentRoot": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys\\wwwroot\\",
+      "ContentRoot": "I:\\个人\\ManagerSys\\ManagerSys\\wwwroot\\",
       "BasePath": "_content/ManagerSys.Host",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys\\wwwroot\\css\\index.css",
+      "Identity": "I:\\个人\\ManagerSys\\ManagerSys\\wwwroot\\css\\index.css",
       "SourceId": "ManagerSys.Host",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys\\wwwroot\\",
+      "ContentRoot": "I:\\个人\\ManagerSys\\ManagerSys\\wwwroot\\",
       "BasePath": "_content/ManagerSys.Host",
       "RelativePath": "css/index.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\index.css"
     },
     {
-      "Identity": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys\\wwwroot\\js\\init.js",
+      "Identity": "I:\\个人\\ManagerSys\\ManagerSys\\wwwroot\\js\\init.js",
       "SourceId": "ManagerSys.Host",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys\\wwwroot\\",
+      "ContentRoot": "I:\\个人\\ManagerSys\\ManagerSys\\wwwroot\\",
       "BasePath": "_content/ManagerSys.Host",
       "RelativePath": "js/init.js",
       "AssetKind": "All",

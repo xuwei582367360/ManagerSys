@@ -2943,7 +2943,6 @@
       "ManagerSys.Application/1.0.0": {
         "dependencies": {
           "ManagerSys.Application.Contracts": "1.0.0",
-          "ManagerSys.Domian": "1.0.0",
           "Volo.Abp.AutoMapper": "6.0.3",
           "Volo.Abp.Ddd.Application": "6.0.3"
         },
@@ -2956,7 +2955,7 @@
       },
       "ManagerSys.Application.Contracts/1.0.0": {
         "dependencies": {
-          "ManagerSys.Domain.Shared": "1.0.0",
+          "ManagerSys.Domian": "1.0.0",
           "Volo.Abp.Ddd.Application.Contracts": "6.0.3"
         },
         "runtime": {

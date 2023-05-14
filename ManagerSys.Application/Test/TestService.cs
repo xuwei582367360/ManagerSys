@@ -7,21 +7,23 @@ using Volo.Abp.Domain.Repositories;
 
 namespace ManagerSys.Application.Test
 {
-    public class TestService : ApplicationAppService,ITestService
+    public class TestService : ApplicationAppService, ITestService
     {
         private IStringLocalizer<MyLocalizationResource> _l;
-        public TestService(IStringLocalizer<MyLocalizationResource> l)
+        private readonly IRepository<SysLog, Guid> _Repository;
+        public TestService(IStringLocalizer<MyLocalizationResource> l, IRepository<SysLog, Guid> Repository)
         {
             _l = l;
+            _Repository = Repository;
         }
 
         public async Task<string> GetTestAsync()
         {
-            Log.Debug("测试Debug");
-            Log.Information("测试Information");
-            Log.Warning("测试Warning");
-            Log.Fatal("测试Fatal");
-            return  "test service";
+            Serilog.Log.Debug("测试Debug");
+            Serilog.Log.Information("测试Information");
+            Serilog.Log.Warning("测试Warning");
+            Serilog.Log.Fatal("测试Fatal");
+            return "test service";
         }
 
         public string GetWellCome()

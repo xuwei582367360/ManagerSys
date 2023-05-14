@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using ManagerSys.Application.Contracts.Log;
+using ManagerSys.Domian.Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ namespace ManagerSys.Application
         public ApplicationAutoMapperProfile()
         {
             // 配置自动映射
-            //CreateMap<T1, T2>();
+            CreateMap<SysLogAddDto, SysLog>();
         }
     }
 }

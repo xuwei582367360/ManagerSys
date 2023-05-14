@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <BaseOutputPath></BaseOutputPath>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

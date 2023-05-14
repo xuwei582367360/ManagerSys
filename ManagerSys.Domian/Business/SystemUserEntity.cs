@@ -11,7 +11,7 @@ using Volo.Abp.Domain.Entities;
 
 namespace ManagerSys.Domian.Business
 {
-    [Table("SystemUsers")]
+    [Table("Sys_Users")]
     public class SystemUserEntity : BaseEntity<int>
     {
         [Key]

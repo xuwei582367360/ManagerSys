@@ -22,6 +22,9 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using IGeekFan.AspNetCore.Knife4jUI;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using System.Reflection;
+using ManagerSys.Host.Filter;
+using Volo.Abp.AspNetCore.Mvc.ExceptionHandling;
 
 namespace ManagerSys.Host
 {
@@ -46,21 +49,36 @@ namespace ManagerSys.Host
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             //自定义路由
             context.Services.AddTransient<IConventionalRouteBuilder, ConventionalRouteBuilderExt>();
-            NewtonsoftJson(context);
+            CongigurationFilter(context);
+            ConfigureNewtonsoftJson(context);
             ConfigureUrls(configuration);
             ConfigureVirtualFileSystem(context);
             ConfigureConventionalControllers();
             ConfigureLocalization();
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context, configuration);
+            
         }
 
+
+        /// <summary>
+        /// 全局拦截
+        /// </summary>
+        /// <param name="context"></param>
+        private void CongigurationFilter(ServiceConfigurationContext context) 
+        {
+            context.Services.AddControllers(options =>
+            {
+                options.Filters.Add<ExceptionFilter>();
+                options.Filters.Add<ValidateFilter>(-1);
+            });
+        }
 
         /// <summary>
         /// JSON序列化
         /// </summary>
         /// <param name="context"></param>
-        private void NewtonsoftJson(ServiceConfigurationContext context)
+        private void ConfigureNewtonsoftJson(ServiceConfigurationContext context)
         {
             //JSON序列化
             context.Services.AddControllers().AddNewtonsoftJson(options =>
@@ -159,14 +177,20 @@ namespace ManagerSys.Host
                     if (!string.IsNullOrEmpty(item))
                         options.IncludeXmlComments(Path.Combine(item), true);
                 }
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagerSys API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "ManagerSys API",
+                    Description = $"API描述,v1版本"
+                });
+                //options.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagerSys API", Version = "v1" });
                 options.CustomSchemaIds(type => type.FullName);
                 //options.OperationFilter<SwaggerHanderFilter>();
                 options.AddServer(new OpenApiServer()
                 {
 
                     Url = "",
-                    Description = "vvv"
+                    Description = "Swagger"
                 });
                 options.CustomOperationIds(apidesc =>
                 {

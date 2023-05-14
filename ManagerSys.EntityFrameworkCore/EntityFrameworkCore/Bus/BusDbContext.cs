@@ -13,6 +13,7 @@ namespace ManagerSys.EntityFrameworkCore
     {
 
         public DbSet<SystemUserEntity> systemUserEntities { get; set; }
+        public DbSet<SysLog> sysLogs { get; set; }
 
         public BusDbContext(DbContextOptions<BusDbContext> options)
             : base(options)

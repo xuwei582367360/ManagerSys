@@ -24,6 +24,87 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("ManagerSys.Domian.Business.SysLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasMaxLength(50)
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreateTime");
+
+                    b.Property<string>("CreateUser")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("CreateUser");
+
+                    b.Property<string>("CreateUserCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("CreateUserCode");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<int>("LogType")
+                        .HasColumnType("int")
+                        .HasColumnName("LogType");
+
+                    b.Property<string>("MacAddress")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("MacAddress");
+
+                    b.Property<string>("OperateContent")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
+                        .HasColumnName("OperateContent");
+
+                    b.Property<string>("OperateType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("OperateType");
+
+                    b.Property<string>("OperateUserIp")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("OperateUserIp");
+
+                    b.Property<string>("Page")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("Page");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasMaxLength(50)
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdateTime");
+
+                    b.Property<string>("UpdateUser")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("UpdateUser");
+
+                    b.Property<string>("UpdateUserCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("UpdateUserCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sys_Log");
+                });
+
             modelBuilder.Entity("ManagerSys.Domian.Business.SystemUserEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -114,13 +195,13 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
 
                     b.HasKey("Id");
 
-                    b.ToTable("SystemUsers");
+                    b.ToTable("Sys_Users");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 10, 130, DateTimeKind.Local).AddTicks(1082),
+                            CreateTime = new DateTime(2023, 5, 14, 17, 44, 23, 978, DateTimeKind.Local).AddTicks(1203),
                             CreateUser = "",
                             CreateUserCode = "",
                             Email = "15086691491@qq.com",
