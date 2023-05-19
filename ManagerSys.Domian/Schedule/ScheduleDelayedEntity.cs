@@ -18,6 +18,7 @@ namespace ManagerSys.Domian.Schedule
             this.Id = Guid.NewGuid();
         }
 
+        #region Entity
         /// <summary>
         /// 任务id
         /// </summary>
@@ -112,6 +113,8 @@ namespace ManagerSys.Domian.Schedule
         [Required, MaxLength(1000)]
         [Column("NotifyBody")]
         public string NotifyBody { get; set; }
+        #endregion
+       
 
     }
 

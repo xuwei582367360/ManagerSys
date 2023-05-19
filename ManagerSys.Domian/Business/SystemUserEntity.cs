@@ -14,6 +14,7 @@ namespace ManagerSys.Domian.Business
     [Table("Sys_Users")]
     public class SystemUserEntity : BaseEntity<int>
     {
+        #region Entity
         [Key]
         [Column("Id")]
         public int Id { get; set; }
@@ -48,6 +49,7 @@ namespace ManagerSys.Domian.Business
 
         [Column("LastLoginTime")]
         public DateTime? LastLoginTime { get; set; }
+        #endregion
     }
 
     public enum SystemUserStatus

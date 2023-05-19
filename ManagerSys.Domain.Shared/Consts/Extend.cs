@@ -57,27 +57,6 @@ namespace ManagerSys.Domain.Shared.Consts
         /// <returns></returns>
         public static string GetUserInfo(this HttpContext http, string key)
         {
-            //    var user = new UserService();
-            //    var array = http.User.Identities.FirstOrDefault().Claims;
-            //    user.Id = Convert.ToInt32(array.FirstOrDefault(p => p.Type == "Id").Value);
-            //    user.Account = array.FirstOrDefault(p => p.Type == "Account").Value;
-            //    user.UserName = array.FirstOrDefault(p => p.Type == "UserName").Value;
-            //    user.RoleId = Convert.ToInt32(array.FirstOrDefault(p => p.Type == "RoleId").Value);
-            //    user.DepartmentPath = array.FirstOrDefault(p => p.Type == "DepartmentPath").Value;
-            //    user.Company_ID = Convert.ToInt32(array.FirstOrDefault(p => p.Type == "Company_ID").Value);
-            //    user.Company_Code = array.FirstOrDefault(p => p.Type == "DepartmentPath").Value;
-            //    user.IsAdmin = Convert.ToInt32(array.FirstOrDefault(p => p.Type == "IsAdmin").Value);
-            //    user.Department_ID = Convert.ToInt32(array.FirstOrDefault(p => p.Type == "Department_ID").Value);
-            //    user.ComPanyPath = array.FirstOrDefault(p => p.Type == "ComPanyPath").Value;
-            //    return user;
-            //var bytes = new byte[];
-            //http.Session.TryGetValue(key,out bytes[])
-            //if (http.Session.TryGetValue("UserData", out var userInfo))
-            //{
-
-            //}
-            //var str = Encoding.UTF8.GetString(userInfo);
-            //JsonConvert.DeserializeObject(str)
             return string.Empty;
         }
         /// <summary>

@@ -32,7 +32,7 @@ namespace ManagerSys.Application.Log
             entity.CreateUserCode = "";
             entity.CreateUser = "";
             entity.CreateTime = DateTime.Now;
-            await _Repository.InsertAsync(entity);
+            var result = await _Repository.InsertAsync(entity,true); //不知道为啥，ExceptionFilter插入日志要加 true 参数
         }
     }
 }

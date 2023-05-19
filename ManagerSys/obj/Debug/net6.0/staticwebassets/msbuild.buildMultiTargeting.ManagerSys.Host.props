@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ManagerSys.Host.props" />
-</Project>

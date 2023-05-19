@@ -57,8 +57,9 @@ namespace ManagerSys.Domain.Shared.Middlewares
                         .WriteTo.Async(c => c.File(debugFilePath, rollingInterval: RollingInterval.Day, outputTemplate: outputTemplate))
                 )
 #if DEBUG
-            .WriteTo.Async(c => c.Console());
+            .WriteTo.Async(c => c.Console())
 #endif
+            ;
             });
             //builder.Host.UseSerilog((context, logger) =>
             //{

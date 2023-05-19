@@ -63,8 +63,8 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
 
                     b.Property<string>("OperateContent")
                         .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(2147483647)
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("OperateContent");
 
                     b.Property<string>("OperateType")
@@ -201,7 +201,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2023, 5, 14, 17, 44, 23, 978, DateTimeKind.Local).AddTicks(1203),
+                            CreateTime = new DateTime(2023, 5, 16, 17, 34, 22, 682, DateTimeKind.Local).AddTicks(9479),
                             CreateUser = "",
                             CreateUserCode = "",
                             Email = "15086691491@qq.com",

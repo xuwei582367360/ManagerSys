@@ -32,21 +32,6 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-
-/[Dd]ebug/
-/[Dd]ebugPublic/
-/[Rr]elease/
-/[Rr]eleases/
-/x64/
-/x86/
-/[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-/[Aa][Rr][Mm]64/
-/bld/
-/[Bb]in/
-/[Oo]bj/
-/[Ll]og/
-/[Ll]ogs/
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -411,15 +396,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-.vs/ManagerSys/v17/.suo
-*.cache
-/ManagerSys/obj/Debug/net6.0/ManagerSys.Host.csproj.AssemblyReference.cache
-/ManagerSys.HttpApi.Client/obj/Debug/net6.0/ManagerSys.HttpApi.Client.csproj.AssemblyReference.cache
-/ManagerSys.EntityFrameworkCore.Tests/obj/Debug/net6.0/ManagerSys.EntityFrameworkCore.Tests.csproj.AssemblyReference.cache
-/ManagerSys.HttpApi/obj/Debug/net6.0/ManagerSys.HttpApi.csproj.AssemblyReference.cache
-/ManagerSys.EntityFrameworkCore/obj/Debug/net6.0/ManagerSys.EntityFrameworkCore.csproj.AssemblyReference.cache
-/ManagerSys.Domian/obj/Debug/net6.0/ManagerSys.Domian.csproj.AssemblyReference.cache
-/ManagerSys.Application.Contracts/obj/Debug/net6.0/ManagerSys.Application.Contracts.csproj.AssemblyReference.cache
-/ManagerSys.Application/obj/Debug/net6.0/ManagerSys.Application.csproj.AssemblyReference.cache
-/ManagerSys/obj/Debug/net6.0/ManagerSys.Host.csproj.AssemblyReference.cache
-/.vs/ManagerSys/v17/.suo
