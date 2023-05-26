@@ -26,6 +26,8 @@ using System.Reflection;
 using ManagerSys.Host.Filter;
 using Volo.Abp.AspNetCore.Mvc.ExceptionHandling;
 using Serilog;
+using ManagerSys.Application.ScheduleHosted;
+using ManagerSys.Domain.Shared.QuartzNet;
 
 namespace ManagerSys.Host
 {
@@ -62,6 +64,9 @@ namespace ManagerSys.Host
             {
                 ConfigureSwaggerServices(context, configuration);
             }
+
+            context.Services.AddSingleton<ResultfulApiJobFactory>();
+            context.Services.AddHostedService<ScheduleHostedService>();
         }
 
 

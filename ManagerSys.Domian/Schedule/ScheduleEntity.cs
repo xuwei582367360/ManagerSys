@@ -28,10 +28,10 @@ namespace ManagerSys.Domian.Schedule
         public string Title { get; set; }
 
         /// <summary>
-        /// 任务类型
+        /// 任务类型 Assembly,http
         /// </summary>
         [Required]
-        [Column("MetaType")]
+        [Column("MetaType")]  
         public int MetaType { get; set; }
 
         /// <summary>
@@ -40,6 +40,13 @@ namespace ManagerSys.Domian.Schedule
         [MaxLength(500)]
         [Column("Remark")]
         public string Remark { get; set; }
+
+        /// <summary>
+        /// 任务群组
+        /// </summary>
+        [MaxLength(500)]
+        [Column("GroupName")]
+        public string GroupName { get; set; }
 
         /// <summary>
         /// 是否周期运行
@@ -62,12 +69,12 @@ namespace ManagerSys.Domian.Schedule
         [Column("AssemblyName")]
         public string AssemblyName { get; set; }
 
-        /// <summary>
-        /// 任务的类型
-        /// </summary>
-        [MaxLength(200)]
-        [Column("ClassName")]
-        public string ClassName { get; set; }
+        ///// <summary>
+        ///// 任务的类型
+        ///// </summary>
+        //[MaxLength(200)]
+        //[Column("ClassName")]
+        //public string ClassName { get; set; }
 
         /// <summary>
         /// 自定义参数（json格式）

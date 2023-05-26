@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PIz5cqwW91O8tkGftyrUwv9ndWWoWiLPFCEbG4cotl0VRG6V3fmQMGGUyuRrQq6TqAgO5V2wPqCD/P0BEloNkA==",
+  "dgSpecHash": "B4q304X/a+mzaQ1KC/lVMJc9r7WQVXLl8Sc1q83pV1lP5JdGMvDuyXuU5vZR6yCBPA3kUWjUS3y3zwg+0R6d2g==",
   "success": true,
   "projectFilePath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.EntityFrameworkCore\\ManagerSys.EntityFrameworkCore.csproj",
   "expectedPackageFiles": [
@@ -72,6 +72,7 @@
     "C:\\Users\\sntsoft\\.nuget\\packages\\octopus.client\\14.3.547\\octopus.client.14.3.547.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\oracle.entityframeworkcore\\6.21.5\\oracle.entityframeworkcore.6.21.5.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.50\\oracle.manageddataaccess.core.3.21.50.nupkg.sha512",
+    "C:\\Users\\sntsoft\\.nuget\\packages\\quartz\\3.6.2\\quartz.3.6.2.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.5.0\\runtime.native.system.data.sqlclient.sni.4.5.0.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -89,7 +90,7 @@
     "C:\\Users\\sntsoft\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\sntsoft\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\sntsoft\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\system.data.common\\4.3.0\\system.data.common.4.3.0.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\system.data.sqlclient\\4.6.0\\system.data.sqlclient.4.6.0.nupkg.sha512",
     "C:\\Users\\sntsoft\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",

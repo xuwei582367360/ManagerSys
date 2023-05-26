@@ -25,7 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{66500BFB-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABPManage.DbMigrator", "ABPManage.DbMigrator\ABPManage.DbMigrator.csproj", "{F9EA688F-DC00-4987-B9EE-5A8A31C70B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Tests", "SMS.Tests\SMS.Tests.csproj", "{70C34FAC-A22D-437B-9524-A744E7442E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMS.Tests", "SMS.Tests\SMS.Tests.csproj", "{70C34FAC-A22D-437B-9524-A744E7442E1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerSys.Web", "ManagerSys.Web\ManagerSys.Web.csproj", "{D3485DD0-472D-4701-BD1E-4DDD4CFA3500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{70C34FAC-A22D-437B-9524-A744E7442E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70C34FAC-A22D-437B-9524-A744E7442E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70C34FAC-A22D-437B-9524-A744E7442E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3485DD0-472D-4701-BD1E-4DDD4CFA3500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3485DD0-472D-4701-BD1E-4DDD4CFA3500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3485DD0-472D-4701-BD1E-4DDD4CFA3500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3485DD0-472D-4701-BD1E-4DDD4CFA3500}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

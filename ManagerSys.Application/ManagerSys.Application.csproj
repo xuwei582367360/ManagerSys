@@ -15,4 +15,8 @@
     <ProjectReference Include="..\ManagerSys.Application.Contracts\ManagerSys.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Quartz\" />
+  </ItemGroup>
+
 </Project>

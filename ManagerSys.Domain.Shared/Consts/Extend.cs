@@ -101,9 +101,7 @@ namespace ManagerSys.Domain.Shared.Consts
                 break;
                 //}
             }
-
             return macIp;
-
         }
 
     }

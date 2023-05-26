@@ -15,4 +15,8 @@
     <ProjectReference Include="..\ManagerSys.Domian\ManagerSys.Domian.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Schedule\Dto\" />
+  </ItemGroup>
+
 </Project>
