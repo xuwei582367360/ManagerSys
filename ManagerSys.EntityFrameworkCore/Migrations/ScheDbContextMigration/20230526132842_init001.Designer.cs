@@ -13,7 +13,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
 {
     [DbContext(typeof(ScheDbContext))]
-    [Migration("20230511081051_init001")]
+    [Migration("20230526132842_init001")]
     partial class init001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,12 +151,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnType("nvarchar(200)")
                         .HasColumnName("AssemblyName");
 
-                    b.Property<string>("ClassName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
-                        .HasColumnName("ClassName");
-
                     b.Property<DateTime?>("CreateTime")
                         .HasMaxLength(50)
                         .HasColumnType("datetime2")
@@ -186,6 +180,12 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("EndDate");
+
+                    b.Property<string>("GroupName")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("GroupName");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -835,7 +835,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_SmtpServer",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8603),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(734),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -847,7 +847,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_SmtpPort",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8617),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(746),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -859,7 +859,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_FromAccount",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8619),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(748),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -871,7 +871,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_FromAccountPwd",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8621),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(749),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -883,7 +883,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Assembly_ImagePullPolicy",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8623),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(751),
                             Group = "程序集配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -895,7 +895,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Http_RequestTimeout",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8625),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(753),
                             Group = "HTTP配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -907,7 +907,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "System_WorkerUnHealthTimes",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8627),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(774),
                             Group = "系统配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -919,7 +919,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "DelayTask_DelayPattern",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8629),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(776),
                             Group = "延时任务配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -931,7 +931,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "DelayTask_RetryTimes",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8630),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(777),
                             Group = "延时任务配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -943,7 +943,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "DelayTask_RetrySpans",
-                            CreateTime = new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8632),
+                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(780),
                             Group = "延时任务配置",
                             IsDeleted = false,
                             IsReuired = true,

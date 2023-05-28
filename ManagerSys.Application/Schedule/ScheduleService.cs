@@ -15,6 +15,8 @@ using Quartz.Impl;
 using Volo.Abp.Uow;
 using Quartz.Impl.Matchers;
 using ManagerSys.Domain.Shared.Enums;
+using System.Security.Cryptography;
+using LogDashboard.Repository;
 
 namespace ManagerSys.Application.Schedule
 {
@@ -45,14 +47,26 @@ namespace ManagerSys.Application.Schedule
 
 
         /// <summary>
-        /// 返回所有停止的任务
+        /// 根据状态返回任务
         /// </summary>
         /// <returns></returns>
-        public async Task<List<ScheduleEntity>> QueryStopList()
+        public async Task<List<ScheduleEntity>> QueryListByStatus(int? status)
         {
-           return (await _scheduleRepository.GetQueryableAsync()).WhereIf(true, s => s.Status == (int)ScheduleStatus.Stop).ToList();
+            return (await _scheduleRepository.GetQueryableAsync()).WhereIf(status != null, s => s.Status == status).ToList();
         }
-        
+
+        /// <summary>
+        /// 根据guid 获取未删除的调度任务
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public async Task<ScheduleEntity> GetScheduleById(Guid Id)
+        {
+            return (await _scheduleRepository.GetQueryableAsync())
+                .WhereIf(true, x => x.Status != (int)ScheduleStatus.Deleted)
+                 .WhereIf(true, x => !x.IsDeleted)
+                .WhereIf(true, x => x.Id == Id)?.FirstOrDefault();
+        }
 
         /// <summary>
         /// 新增调度任务

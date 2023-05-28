@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
 {
-    public partial class init003 : Migration
+    public partial class init002 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreateTime",
-                value: new DateTime(2023, 5, 16, 16, 40, 31, 576, DateTimeKind.Local).AddTicks(2627));
+                value: new DateTime(2023, 5, 26, 21, 28, 25, 609, DateTimeKind.Local).AddTicks(4530));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -24,7 +24,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreateTime",
-                value: new DateTime(2023, 5, 14, 17, 44, 23, 978, DateTimeKind.Local).AddTicks(1203));
+                value: new DateTime(2023, 5, 26, 21, 27, 3, 639, DateTimeKind.Local).AddTicks(2092));
         }
     }
 }

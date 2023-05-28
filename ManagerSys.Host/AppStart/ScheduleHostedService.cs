@@ -1,4 +1,6 @@
 ﻿using ManagerSys.Application.Contracts.Schedule;
+using ManagerSys.Application.Schedule;
+using ManagerSys.Host.Schedule;
 using Microsoft.Extensions.Hosting;
 using Quartz;
 using System;
@@ -7,21 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManagerSys.Application.ScheduleHosted
+namespace ManagerSys.Host.AppStart
 {
     /// <summary>
     /// 初始化调度启动service
     /// </summary>
-    public class ScheduleHostedService : ApplicationAppService, IHostedService
+    public class ScheduleHostedService :  IHostedService
     {
         private readonly IHostApplicationLifetime _appLifetime;
-        private readonly IHttpResultfulJobService _httpResultfulJobService;
         private readonly IJobExecutionContext context;
-        public ScheduleHostedService(IHostApplicationLifetime appLifetime,
-            IHttpResultfulJobService httpResultfulJobService)
+        private readonly ScheduleManager _scheduleManager;
+        public ScheduleHostedService(IHostApplicationLifetime appLifetime, ScheduleManager scheduleManager)
         {
             _appLifetime = appLifetime;
-            _httpResultfulJobService = httpResultfulJobService;
+            _scheduleManager = scheduleManager;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -37,11 +38,10 @@ namespace ManagerSys.Application.ScheduleHosted
 
 
 
-        private async void OnStarted()
+        private  void OnStarted()
         {
             //初始化Quartz
-             _httpResultfulJobService.InitScheduler().Wait();
-
+            _scheduleManager.InitScheduler().Wait();
 
         }
 

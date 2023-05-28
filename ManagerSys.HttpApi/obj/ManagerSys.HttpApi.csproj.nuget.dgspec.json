@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj": {}
+    "I:\\个人\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj": {}
   },
   "projects": {
-    "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj": {
+    "I:\\个人\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj",
+        "projectUniqueName": "I:\\个人\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj",
         "projectName": "ManagerSys.Application.Contracts",
-        "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj",
-        "packagesPath": "C:\\Users\\sntsoft\\.nuget\\packages\\",
-        "outputPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Application.Contracts\\obj\\",
+        "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\个人\\ManagerSys\\ManagerSys.Application.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "G:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sntsoft\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,16 +25,15 @@
           "net6.0"
         ],
         "sources": {
-          "F:\\源代码\\新建文件夹 (2)\\01 智能水表管理平台(插件)\\Packages": {},
-          "http://api.nuget.org/v3/index.json": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj": {
-                "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj"
+              "I:\\个人\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj": {
+                "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj"
               }
             }
           }
@@ -70,24 +69,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj": {
+    "I:\\个人\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj",
+        "projectUniqueName": "I:\\个人\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj",
         "projectName": "ManagerSys.Domain.Shared",
-        "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj",
-        "packagesPath": "C:\\Users\\sntsoft\\.nuget\\packages\\",
-        "outputPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domain.Shared\\obj\\",
+        "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\个人\\ManagerSys\\ManagerSys.Domain.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "G:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sntsoft\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -95,8 +94,7 @@
           "net6.0"
         ],
         "sources": {
-          "F:\\源代码\\新建文件夹 (2)\\01 智能水表管理平台(插件)\\Packages": {},
-          "http://api.nuget.org/v3/index.json": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -172,24 +170,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj": {
+    "I:\\个人\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj",
+        "projectUniqueName": "I:\\个人\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj",
         "projectName": "ManagerSys.Domian",
-        "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj",
-        "packagesPath": "C:\\Users\\sntsoft\\.nuget\\packages\\",
-        "outputPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domian\\obj\\",
+        "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.Domian\\ManagerSys.Domian.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\个人\\ManagerSys\\ManagerSys.Domian\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "G:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sntsoft\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -197,16 +195,15 @@
           "net6.0"
         ],
         "sources": {
-          "F:\\源代码\\新建文件夹 (2)\\01 智能水表管理平台(插件)\\Packages": {},
-          "http://api.nuget.org/v3/index.json": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj": {
-                "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj"
+              "I:\\个人\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj": {
+                "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.Domain.Shared\\ManagerSys.Domain.Shared.csproj"
               }
             }
           }
@@ -246,24 +243,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj": {
+    "I:\\个人\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj",
+        "projectUniqueName": "I:\\个人\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj",
         "projectName": "ManagerSys.HttpApi",
-        "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj",
-        "packagesPath": "C:\\Users\\sntsoft\\.nuget\\packages\\",
-        "outputPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.HttpApi\\obj\\",
+        "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.HttpApi\\ManagerSys.HttpApi.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\个人\\ManagerSys\\ManagerSys.HttpApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "G:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sntsoft\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -271,16 +268,15 @@
           "net6.0"
         ],
         "sources": {
-          "F:\\源代码\\新建文件夹 (2)\\01 智能水表管理平台(插件)\\Packages": {},
-          "http://api.nuget.org/v3/index.json": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj": {
-                "projectPath": "F:\\徐玮\\私人\\singleGit\\xuwei582367360\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj"
+              "I:\\个人\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj": {
+                "projectPath": "I:\\个人\\ManagerSys\\ManagerSys.Application.Contracts\\ManagerSys.Application.Contracts.csproj"
               }
             }
           }
@@ -316,7 +312,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

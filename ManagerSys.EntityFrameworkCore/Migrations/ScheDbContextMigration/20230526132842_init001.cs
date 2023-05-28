@@ -157,10 +157,10 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                     Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     MetaType = table.Column<int>(type: "int", nullable: false),
                     Remark = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    GroupName = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     RunLoop = table.Column<bool>(type: "bit", nullable: false),
                     CronExpression = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     AssemblyName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    ClassName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     CustomParamsJson = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -287,16 +287,16 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                 columns: new[] { "key", "CreateTime", "CreateUser", "CreateUserCode", "Group", "Id", "IsReuired", "Name", "Remark", "Sort", "UpdateTime", "UpdateUser", "UpdateUserCode", "Value" },
                 values: new object[,]
                 {
-                    { "Assembly_ImagePullPolicy", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8623), null, null, "程序集配置", null, true, "文件包拉取策略", "Always-总是拉取，IfNotPresent-本地没有时拉取，默认是Always", 1, null, null, null, "Always" },
-                    { "DelayTask_DelayPattern", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8629), null, null, "延时任务配置", null, true, "延迟模式", "Relative-相对时间，Absolute-绝对时间，默认值是Relative", 1, null, null, null, "Relative" },
-                    { "DelayTask_RetrySpans", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8632), null, null, "延时任务配置", null, true, "回调失败重试间隔", "回调失败重试间隔时间(s)，会随着重试次数递增，默认值是10秒", 3, null, null, null, "10" },
-                    { "DelayTask_RetryTimes", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8630), null, null, "延时任务配置", null, true, "回调失败重试次数", "回调失败重试次数，默认值是3", 2, null, null, null, "3" },
-                    { "Email_FromAccount", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8619), null, null, "邮件配置", null, true, "发件人账号", "邮箱账号", 3, null, null, null, "" },
-                    { "Email_FromAccountPwd", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8621), null, null, "邮件配置", null, true, "发件人账号密码", "登录密码或授权码等", 4, null, null, null, "" },
-                    { "Email_SmtpPort", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8617), null, null, "邮件配置", null, true, "邮件服务器端口", "smtp端口号", 2, null, null, null, "" },
-                    { "Email_SmtpServer", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8603), null, null, "邮件配置", null, true, "邮件服务器", "smtp服务器地址", 1, null, null, null, "" },
-                    { "Http_RequestTimeout", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8625), null, null, "HTTP配置", null, true, "请求超时时间", "单位是秒，默认值是10", 1, null, null, null, "10" },
-                    { "System_WorkerUnHealthTimes", new DateTime(2023, 5, 11, 16, 10, 51, 45, DateTimeKind.Local).AddTicks(8627), null, null, "系统配置", null, true, "Worker允许无响应次数", "健康检查失败达到最大次数会被下线剔除，默认值是3", 1, null, null, null, "3" }
+                    { "Assembly_ImagePullPolicy", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(751), null, null, "程序集配置", null, true, "文件包拉取策略", "Always-总是拉取，IfNotPresent-本地没有时拉取，默认是Always", 1, null, null, null, "Always" },
+                    { "DelayTask_DelayPattern", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(776), null, null, "延时任务配置", null, true, "延迟模式", "Relative-相对时间，Absolute-绝对时间，默认值是Relative", 1, null, null, null, "Relative" },
+                    { "DelayTask_RetrySpans", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(780), null, null, "延时任务配置", null, true, "回调失败重试间隔", "回调失败重试间隔时间(s)，会随着重试次数递增，默认值是10秒", 3, null, null, null, "10" },
+                    { "DelayTask_RetryTimes", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(777), null, null, "延时任务配置", null, true, "回调失败重试次数", "回调失败重试次数，默认值是3", 2, null, null, null, "3" },
+                    { "Email_FromAccount", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(748), null, null, "邮件配置", null, true, "发件人账号", "邮箱账号", 3, null, null, null, "" },
+                    { "Email_FromAccountPwd", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(749), null, null, "邮件配置", null, true, "发件人账号密码", "登录密码或授权码等", 4, null, null, null, "" },
+                    { "Email_SmtpPort", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(746), null, null, "邮件配置", null, true, "邮件服务器端口", "smtp端口号", 2, null, null, null, "" },
+                    { "Email_SmtpServer", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(734), null, null, "邮件配置", null, true, "邮件服务器", "smtp服务器地址", 1, null, null, null, "" },
+                    { "Http_RequestTimeout", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(753), null, null, "HTTP配置", null, true, "请求超时时间", "单位是秒，默认值是10", 1, null, null, null, "10" },
+                    { "System_WorkerUnHealthTimes", new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(774), null, null, "系统配置", null, true, "Worker允许无响应次数", "健康检查失败达到最大次数会被下线剔除，默认值是3", 1, null, null, null, "3" }
                 });
         }
 

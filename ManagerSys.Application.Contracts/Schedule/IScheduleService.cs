@@ -19,6 +19,8 @@ namespace ManagerSys.Application.Contracts.Schedule
         /// <returns></returns>
         Task<ScheduleEntity> Add(ScheduleAddDto model);
 
-        Task<List<ScheduleEntity>> QueryStopList();
+        Task<List<ScheduleEntity>> QueryListByStatus(int? status);
+
+        Task<ScheduleEntity> GetScheduleById(Guid Id);
     }
 }

@@ -26,8 +26,8 @@ using System.Reflection;
 using ManagerSys.Host.Filter;
 using Volo.Abp.AspNetCore.Mvc.ExceptionHandling;
 using Serilog;
-using ManagerSys.Application.ScheduleHosted;
 using ManagerSys.Domain.Shared.QuartzNet;
+using ManagerSys.Host.AppStart;
 
 namespace ManagerSys.Host
 {
