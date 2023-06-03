@@ -1,4 +1,5 @@
-﻿using ManagerSys.Application.Contracts.ScheduleHttpOption;
+﻿using ManagerSys.Application.Contracts.Schedule.Dto;
+using ManagerSys.Application.Contracts.ScheduleHttpOption;
 using ManagerSys.Domian.Schedule;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,19 @@ namespace ManagerSys.Application.ScheduleHttpOption
             return (await _scheduleHttpOptionRepository.GetQueryableAsync())
                  .WhereIf(true, x => !x.IsDeleted)
                 .WhereIf(true, x => x.ScheduleId == scheduleId)?.FirstOrDefault();
+        }
+
+
+        /// <summary>
+        /// 新增http请求
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<ScheduleEntity> Add(ScheduleAddDto model)
+        {
+            var scheModel = ObjectMapper.Map<ScheduleAddDto, ScheduleEntity>(model);
+            return await _scheduleRepository.InsertAsync(scheModel);
         }
     }
 }

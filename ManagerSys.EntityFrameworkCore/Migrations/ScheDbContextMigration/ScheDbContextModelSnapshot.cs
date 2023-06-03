@@ -96,7 +96,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("NotifyUrl");
 
                     b.Property<string>("Remark")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("Remark");
@@ -144,7 +143,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("Id");
 
                     b.Property<string>("AssemblyName")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)")
                         .HasColumnName("AssemblyName");
@@ -165,13 +163,11 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("CreateUserCode");
 
                     b.Property<string>("CronExpression")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("CronExpression");
 
                     b.Property<string>("CustomParamsJson")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("CustomParamsJson");
 
@@ -180,7 +176,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("EndDate");
 
                     b.Property<string>("GroupName")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
                         .HasColumnName("GroupName");
@@ -204,7 +199,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("NextRunTime");
 
                     b.Property<string>("Remark")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
                         .HasColumnName("Remark");
@@ -301,7 +295,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("UpdateUserCode");
 
                     b.Property<string>("WorkerName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("WorkerName");
@@ -319,7 +312,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("ScheduleId");
 
                     b.Property<string>("Body")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Body");
 
@@ -345,7 +337,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("CreateUserCode");
 
                     b.Property<string>("Headers")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Headers");
 
@@ -480,7 +471,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("IsDeleted");
 
                     b.Property<string>("LockedNode")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("LockedNode");
@@ -611,7 +601,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("IsDeleted");
 
                     b.Property<string>("Node")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Node");
@@ -662,7 +651,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("AccessProtocol");
 
                     b.Property<string>("AccessSecret")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("AccessSecret");
@@ -698,7 +686,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("IsDeleted");
 
                     b.Property<string>("MachineName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("MachineName");
@@ -708,7 +695,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("MaxConcurrency");
 
                     b.Property<string>("NodeName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("NodeName");
@@ -795,7 +781,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("Name");
 
                     b.Property<string>("Remark")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
                         .HasColumnName("Remark");
@@ -820,7 +805,6 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         .HasColumnName("UpdateUserCode");
 
                     b.Property<string>("Value")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)")
                         .HasColumnName("Value");
@@ -833,7 +817,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_SmtpServer",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(734),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3227),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -845,7 +829,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_SmtpPort",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(746),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3244),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -857,7 +841,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_FromAccount",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(748),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3246),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -869,7 +853,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Email_FromAccountPwd",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(749),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3249),
                             Group = "邮件配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -881,7 +865,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Assembly_ImagePullPolicy",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(751),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3280),
                             Group = "程序集配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -893,7 +877,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "Http_RequestTimeout",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(753),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3282),
                             Group = "HTTP配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -905,7 +889,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "System_WorkerUnHealthTimes",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(774),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3284),
                             Group = "系统配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -917,7 +901,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "DelayTask_DelayPattern",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(776),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3286),
                             Group = "延时任务配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -929,7 +913,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "DelayTask_RetryTimes",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(777),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3288),
                             Group = "延时任务配置",
                             IsDeleted = false,
                             IsReuired = true,
@@ -941,7 +925,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.ScheDbContextMigration
                         new
                         {
                             Key = "DelayTask_RetrySpans",
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 42, 343, DateTimeKind.Local).AddTicks(780),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 30, 11, 676, DateTimeKind.Local).AddTicks(3289),
                             Group = "延时任务配置",
                             IsDeleted = false,
                             IsReuired = true,

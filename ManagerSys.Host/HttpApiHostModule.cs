@@ -1,33 +1,29 @@
-﻿using ManagerSys.Application;
+﻿using IGeekFan.AspNetCore.Knife4jUI;
+using ManagerSys.Application;
+using ManagerSys.Application.Contracts;
+using ManagerSys.Domain.Shared;
+using ManagerSys.Domain.Shared.QuartzNet;
+using ManagerSys.Domian;
 using ManagerSys.EntityFrameworkCore;
+using ManagerSys.Host.Filter;
+using ManagerSys.Host.Route;
 using ManagerSys.HttpApi;
+using ManagerSys.HttpApi.AppStart;
+using ManagerSys.HttpApi.Route;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
+using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc.Conventions;
+using Volo.Abp.Auditing;
 using Volo.Abp.Autofac;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
-using Volo.Abp;
-using ManagerSys.Domain.Shared;
-using ManagerSys.Domian;
-using ManagerSys.Application.Contracts;
-using Microsoft.AspNetCore.Cors;
-using Volo.Abp.Auditing;
-using Volo.Abp.AspNetCore.Mvc.Conventions;
-using ManagerSys.Host.Route;
-using Newtonsoft.Json.Serialization;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using IGeekFan.AspNetCore.Knife4jUI;
-using Microsoft.AspNetCore.Mvc.Controllers;
-using System.Reflection;
-using ManagerSys.Host.Filter;
-using Volo.Abp.AspNetCore.Mvc.ExceptionHandling;
-using Serilog;
-using ManagerSys.Domain.Shared.QuartzNet;
-using ManagerSys.Host.AppStart;
 
 namespace ManagerSys.Host
 {
@@ -74,7 +70,7 @@ namespace ManagerSys.Host
         /// 全局拦截
         /// </summary>
         /// <param name="context"></param>
-        private void CongigurationFilter(ServiceConfigurationContext context) 
+        private void CongigurationFilter(ServiceConfigurationContext context)
         {
             context.Services.AddControllers(options =>
             {
@@ -178,7 +174,7 @@ namespace ManagerSys.Host
             //    options.CustomSchemaIds(type => type.FullName);
             //}
             //);
-            
+
             context.Services.AddSwaggerGen(options =>
             {
                 var files = Directory.GetFiles(AppContext.BaseDirectory, "*.xml");
@@ -280,7 +276,7 @@ namespace ManagerSys.Host
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();               
+                app.UseDeveloperExceptionPage();
             }
             app.UseAbpRequestLocalization();
 
@@ -308,7 +304,7 @@ namespace ManagerSys.Host
                     c.SwaggerEndpoint("/v1/api-docs", "v1docs");
                 });
             }
-           
+
             app.UseConfiguredEndpoints(endpoints =>
             {
                 endpoints.MapGet("/api/check", () => $"心跳检测成功{DateTime.Now.ToString("yyyy-MM-dd HH:mm:sss")},当前发布时间：2022-08-09 16:17");

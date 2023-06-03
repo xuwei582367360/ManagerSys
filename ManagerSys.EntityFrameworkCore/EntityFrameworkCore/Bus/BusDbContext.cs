@@ -17,7 +17,7 @@ namespace ManagerSys.EntityFrameworkCore
 
         public DbSet<SystemUserEntity> systemUserEntities { get; set; }
         public DbSet<SysLog> sysLogs { get; set; }
-
+        public DbSet<SysMenu> sysMenus { get; set; }
         public BusDbContext(DbContextOptions<BusDbContext> options)
             : base(options)
         {
@@ -27,16 +27,16 @@ namespace ManagerSys.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-          
+
             //字段类型适配
             //builder.FixColumnsDataType<SystemUserEntity>();
             //初始化种子数据
             ModelBuilderExtensions.SeedBusData(builder);
-            builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
+            //builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
 
             #region 字段注释
             var ddd = builder.Model.GetEntityTypes().ToList();
-            var assembly =  Assembly.LoadFrom(Directory.GetCurrentDirectory()+ @"\bin\Debug\net6.0\ManagerSys.Domian.dll");
+            var assembly = Assembly.LoadFrom(Directory.GetCurrentDirectory() + @"\bin\Debug\net6.0\ManagerSys.Domian.dll");
             foreach (var item in ddd)
             {
                 var tabtype = assembly.GetType(item.ClrType.FullName);

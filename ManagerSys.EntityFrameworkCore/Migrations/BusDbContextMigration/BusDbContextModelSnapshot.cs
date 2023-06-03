@@ -62,35 +62,30 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
                         .HasComment("日志类型 1、 操作日志  2、错误日志");
 
                     b.Property<string>("MacAddress")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("MacAddress")
                         .HasComment("操作人MAC地址");
 
                     b.Property<string>("OperateContent")
-                        .IsRequired()
                         .HasMaxLength(2147483647)
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("OperateContent")
                         .HasComment("操作内容描述");
 
                     b.Property<string>("OperateType")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("OperateType")
                         .HasComment(" 操作类型   添加  修改 删除 查询");
 
                     b.Property<string>("OperateUserIp")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("OperateUserIp")
                         .HasComment("操作人IP");
 
                     b.Property<string>("Page")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Page")
@@ -117,6 +112,117 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
                     b.HasKey("Id");
 
                     b.ToTable("Sys_Log");
+                });
+
+            modelBuilder.Entity("ManagerSys.Domian.Business.SysMenu", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id")
+                        .HasComment("主键ID");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasMaxLength(50)
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreateTime")
+                        .HasComment("创建时间");
+
+                    b.Property<string>("CreateUser")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("CreateUser")
+                        .HasComment("创建人");
+
+                    b.Property<string>("CreateUserCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("CreateUserCode")
+                        .HasComment("创建人编码");
+
+                    b.Property<string>("IconUrl")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("IconUrl")
+                        .HasComment("图标URL");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted")
+                        .HasComment("是否删除");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int")
+                        .HasColumnName("Level")
+                        .HasComment("菜单树的层次，以便于查询指定层级的菜单");
+
+                    b.Property<string>("LinkUrl")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("LinkUrl")
+                        .HasComment("页面对应的地址，如果是文件夹或者按钮类型，可以为空");
+
+                    b.Property<string>("MenuCode")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("MenuCode")
+                        .HasComment("菜单编码，用于后端权限控制");
+
+                    b.Property<string>("MenuName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("MenuName")
+                        .HasComment("菜单名称");
+
+                    b.Property<string>("NodeType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("NodeType")
+                        .HasComment("节点名称：1菜单，2页面，3按钮");
+
+                    b.Property<string>("ParentMenuGuid")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("ParentMenuGuid")
+                        .HasComment("菜单父节点ID，方便递归遍历菜单");
+
+                    b.Property<string>("Path")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("Path")
+                        .HasComment("菜单路径");
+
+                    b.Property<int>("Sort")
+                        .HasColumnType("int")
+                        .HasColumnName("Sort")
+                        .HasComment("序号");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasMaxLength(50)
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdateTime")
+                        .HasComment("修改时间");
+
+                    b.Property<string>("UpdateUser")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("UpdateUser")
+                        .HasComment("修改人");
+
+                    b.Property<string>("UpdateUserCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("UpdateUserCode")
+                        .HasComment("修改人编码");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sys_Menu");
                 });
 
             modelBuilder.Entity("ManagerSys.Domian.Business.SystemUserEntity", b =>
@@ -222,7 +328,7 @@ namespace ManagerSys.EntityFrameworkCore.Migrations.BusDbContextMigration
                         new
                         {
                             Id = 1,
-                            CreateTime = new DateTime(2023, 5, 26, 21, 28, 25, 609, DateTimeKind.Local).AddTicks(4530),
+                            CreateTime = new DateTime(2023, 5, 30, 18, 10, 1, 844, DateTimeKind.Local).AddTicks(7673),
                             CreateUser = "",
                             CreateUserCode = "",
                             Email = "15086691491@qq.com",

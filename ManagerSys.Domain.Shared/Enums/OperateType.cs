@@ -13,6 +13,11 @@ namespace ManagerSys.Domain.Shared.Enums
         查询,
         添加,
         修改,
-        删除
+        删除,
+        启动服务,
+        停止服务,
+        暂停服务,
+        恢复运行,
+        立即运行一次
     }
 }

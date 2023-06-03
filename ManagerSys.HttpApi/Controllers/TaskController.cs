@@ -11,6 +11,7 @@ namespace ManagerSys.HttpApi.Controllers
     /// <summary>
     /// 测试Swagger注释
     /// </summary>
+    [Route("api/[controller]")]
     public class TaskController : AbpControllerBase
     {
         private readonly ITestService _testService;

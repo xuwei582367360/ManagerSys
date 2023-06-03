@@ -4,13 +4,17 @@ using ManagerSys.Application.Contracts.ScheduleHttpOption;
 using ManagerSys.Domain.Shared.QuartzNet;
 using ManagerSys.Domian.HostSchedule;
 using ManagerSys.Domian.Schedule;
+using ManagerSys.HttpApi.Schedule;
+using Microsoft.Extensions.DependencyInjection;
 using Quartz;
 using Quartz.Impl;
+using Quartz.Impl.Matchers;
 using Quartz.Impl.Triggers;
+using Serilog;
 using System.Collections.Specialized;
 using Volo.Abp.Domain.Repositories;
 
-namespace ManagerSys.Host.AppStart
+namespace ManagerSys.HttpApi.AppStart
 {
     public class HttpResultfulJobService : ApplicationAppService
     {
@@ -57,7 +61,7 @@ namespace ManagerSys.Host.AppStart
                 //MarkNode(true);
                 //LogHelper.Info("任务调度平台初始化成功！");
                 //启动系统任务
-               // await Start<TaskClearJob>("task-clear", "0 0/1 * * * ? *");
+                await Start<TaskClearJob>("task-clear", "0 0/1 * * * ? *");
                 var runningList = (await _scheduleRepository.GetQueryableAsync()).WhereIf(true, s => s.Status == (int)ScheduleStatus.Running).Select(q => q.Id).ToList();
                 //恢复任务
                 RunningRecovery(runningList);
@@ -95,33 +99,33 @@ namespace ManagerSys.Host.AppStart
                 return true;
             }
             ScheduleOperation schedule = await GetScheduleContext(sid);
-            //IHosSchedule schedule = await HosScheduleFactory.GetHosSchedule(context);
+            IHosSchedule hostSchedule = await HosScheduleFactory.GetHosSchedule(schedule);
             try
             {
                 for (int i = 0; i < 3; i++)
                 {
                     try
                     {
-                        await Start(schedule);
+                        await Start(hostSchedule);
                         return true;
                     }
                     catch (SchedulerException sexp)
                     {
-                        //LogHelper.Error($"任务启动失败！开始第{i + 1}次重试...", sexp, context.Schedule.Id);
+                        Log.Error($"任务启动失败！开始第{i + 1}次重试...", sexp, schedule.Schedule.Id);
                     }
                 }
                 //最后一次尝试
-                await Start(schedule);
+                await Start(hostSchedule);
                 return true;
             }
             catch (SchedulerException sexp)
             {
-                // LogHelper.Error($"任务所有重试都失败了，已放弃启动！", sexp, context.Schedule.Id);
+                Log.Error($"任务所有重试都失败了，已放弃启动！", sexp, schedule.Schedule.Id);
                 return false;
             }
             catch (Exception exp)
             {
-                //LogHelper.Error($"任务启动失败！", exp, context.Schedule.Id);
+                Log.Error($"任务启动失败！", exp, schedule.Schedule.Id);
                 return false;
             }
         }
@@ -177,7 +181,7 @@ namespace ManagerSys.Host.AppStart
             };
             trigger.StartTimeUtc = DateTimeOffset.Now;
             await _scheduler.ScheduleJob(job, trigger);
-        }
+        }  
 
 
         /// <summary>
@@ -186,41 +190,42 @@ namespace ManagerSys.Host.AppStart
         /// <param name="schedule"></param>
         /// <returns></returns>
         /// <exception cref="SchedulerException"></exception>
-        private static async Task Start(ScheduleOperation schedule)
+        private async Task Start(IHosSchedule schedule)
         {
-            //JobDataMap map = new JobDataMap
-            //{
-            //    new KeyValuePair<string, object> ("instance",schedule),
-            //};
+            JobDataMap map = new JobDataMap
+            {
+                new KeyValuePair<string, object> ("instance",schedule),
+            };
             string jobKey = schedule.Schedule.Id.ToString();
             try
             {
-                //IJobDetail job = JobBuilder.Create().OfType(schedule.GetQuartzJobType()).WithIdentity(jobKey).UsingJobData(map).Build();
-                IJobDetail job = JobBuilder.Create().WithIdentity(jobKey).Build();
-                //添加监听器
-                //var listener = new JobRunListener(jobKey);
-                //listener.OnSuccess += StartedEvent;
-                //_scheduler.ListenerManager.AddJobListener(listener, KeyMatcher<JobKey>.KeyEquals(new JobKey(jobKey)));
+                IJobDetail job = JobBuilder.Create()/*.OfType(schedule.GetQuartzJobType())*/.WithIdentity(jobKey).UsingJobData(map).Build();
+                #region 添加任务监听器
+                var listener = new JobRunListener(jobKey);
+                listener.OnSuccess += StartedEvent;
+                _scheduler.ListenerManager.AddJobListener(listener, KeyMatcher<JobKey>.KeyEquals(new JobKey(jobKey)));
+                #endregion
 
                 ITrigger trigger = GetTrigger(schedule.Schedule);
                 await _scheduler.ScheduleJob(job, trigger, default);
 
-                //using (var scope = new Core.ScopeDbContext())
-                //{
-                //    var db = scope.GetDbContext();
-                //    var task = db.Schedules.FirstOrDefault(x => x.Id == schedule.Main.Id);
-                //    if (task != null)
-                //    {
-                //        task.NextRunTime = TimeZoneInfo.ConvertTimeFromUtc(trigger.GetNextFireTimeUtc().Value.UtcDateTime, TimeZoneInfo.Local);
-                //        await db.SaveChangesAsync();
-                //    }
-                //}
+                //更新下次运行时间
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    var scheduleService = scope.ServiceProvider.GetService<IScheduleService>();
+                    var scheEntity = await scheduleService.GetScheduleById(schedule.Schedule.Id);
+                    if (scheEntity != null)
+                    {
+                        scheEntity.NextRunTime = TimeZoneInfo.ConvertTimeFromUtc(trigger.GetNextFireTimeUtc().Value.UtcDateTime, TimeZoneInfo.Local);
+                        await scheduleService.Update(scheEntity);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 throw new SchedulerException(ex);
             }
-            // LogHelper.Info($"任务[{schedule.Main.Title}]启动成功！", schedule.Main.Id);
+            Log.Information($"任务[{schedule.Schedule.Title}]启动成功！", schedule.Schedule.Id);
 
             //_ = Task.Run(async () =>
             //{
@@ -249,6 +254,14 @@ namespace ManagerSys.Host.AppStart
             //});
         }
 
+        private void StartedEvent(Guid scheduleId, DateTime? nextRunTime)
+        {
+            using (var scope = _serviceProvider.CreateScope())
+            {
+                var scheduleService = scope.ServiceProvider.GetService<IScheduleService>();
+                scheduleService.StartedEvent(scheduleId);
+            }
+        }
 
         private static ITrigger GetTrigger(ScheduleEntity model)
         {

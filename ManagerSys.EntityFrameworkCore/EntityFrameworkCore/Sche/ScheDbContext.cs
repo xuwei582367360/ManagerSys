@@ -62,7 +62,7 @@ namespace ManagerSys.EntityFrameworkCore
             builder.FixColumnsDataType<TraceStatisticsEntity>();
             //初始化种子数据
             ModelBuilderExtensions.SeedScheData(builder);
-            builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
+            //builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
         }
 
     }

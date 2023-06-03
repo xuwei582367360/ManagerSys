@@ -1,6 +1,6 @@
 ﻿using ManagerSys.Application.Contracts.Schedule;
 using ManagerSys.Application.Schedule;
-using ManagerSys.Host.Schedule;
+using ManagerSys.HttpApi.Schedule;
 using Microsoft.Extensions.Hosting;
 using Quartz;
 using System;
@@ -9,12 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManagerSys.Host.AppStart
+namespace ManagerSys.HttpApi.AppStart
 {
     /// <summary>
     /// 初始化调度启动service
     /// </summary>
-    public class ScheduleHostedService :  IHostedService
+    public class ScheduleHostedService : IHostedService
     {
         private readonly IHostApplicationLifetime _appLifetime;
         private readonly IJobExecutionContext context;
@@ -38,7 +38,7 @@ namespace ManagerSys.Host.AppStart
 
 
 
-        private  void OnStarted()
+        private void OnStarted()
         {
             //初始化Quartz
             _scheduleManager.InitScheduler().Wait();

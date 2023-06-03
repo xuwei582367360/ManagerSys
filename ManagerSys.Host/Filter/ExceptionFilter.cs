@@ -91,7 +91,7 @@ namespace ManagerSys.Host.Filter
             await context.GetRequiredService<IExceptionNotifier>().NotifyAsync(new ExceptionNotificationContext(context.Exception));
             context.HttpContext.Response.Headers.Add(AbpHttpConsts.AbpErrorFormat, "true");
             context.HttpContext.Response.StatusCode = StatusCodes.Status200OK;
-            var result = new BasePage()
+            var result = new BasePage<string>()
             {
                 Code = HttpResultCode.Error,
                 Message = context.Exception.Message

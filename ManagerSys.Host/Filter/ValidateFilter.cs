@@ -59,7 +59,7 @@ namespace ManagerSys.Host.Filter
         {
             if (!context.ModelState.IsValid)
             {
-                var result = new BasePage();
+                var result = new BasePage<string>();
                 foreach (var item in context.ModelState.Values)
                 {
                     if (item.ValidationState == ModelValidationState.Invalid)

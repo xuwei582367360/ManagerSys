@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ManagerSys.Application.Contracts.Log;
+using ManagerSys.Application.Contracts.Menu.Dto;
 using ManagerSys.Application.Contracts.Schedule.Dto;
 using ManagerSys.Domian.Business;
 using ManagerSys.Domian.Schedule;
@@ -21,6 +22,7 @@ namespace ManagerSys.Application
             CreateMap<SysLogAddDto, SysLog>();
             CreateMap<ScheduleAddDto, ScheduleEntity>();
             CreateMap<ScheduleAddDto, ScheduleHttpOptionEntity>();
+            CreateMap<MenuAddDto, SysMenu>();
             
         }
     }

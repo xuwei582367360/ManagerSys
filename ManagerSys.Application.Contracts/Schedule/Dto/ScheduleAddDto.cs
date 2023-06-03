@@ -12,6 +12,10 @@ namespace ManagerSys.Application.Contracts.Schedule.Dto
     public class ScheduleAddDto
     {
         /// <summary>
+        /// 菜单GUID
+        /// </summary>
+        public Guid MenuGuid { get; set; }
+        /// <summary>
         /// 任务名称
         /// </summary>
         [Required, MaxLength(100)]
@@ -33,11 +37,23 @@ namespace ManagerSys.Application.Contracts.Schedule.Dto
         public string Remark { get; set; }
 
         /// <summary>
+        /// 任务群组
+        /// </summary>
+        [MaxLength(500)]
+        [Column("GroupName")]
+        public string GroupName { get; set; }
+
+        /// <summary>
         /// 是否周期运行
         /// </summary>
         [Required]
         [Column("RunLoop")]
         public bool RunLoop { get; set; }
+
+        /// <summary>
+        /// 是否立即运行
+        /// </summary>
+        public bool IsRunning { get; set; }
 
         /// <summary>
         /// cron表达式
@@ -46,12 +62,6 @@ namespace ManagerSys.Application.Contracts.Schedule.Dto
         [Column("CronExpression")]
         public string CronExpression { get; set; }
 
-        /// <summary>
-        /// 任务群组
-        /// </summary>
-        [MaxLength(500)]
-        [Column("GroupName")]
-        public string GroupName { get; set; }
         /// <summary>
         /// 任务所在程序集
         /// </summary>

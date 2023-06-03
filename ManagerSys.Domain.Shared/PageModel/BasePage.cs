@@ -9,7 +9,7 @@ namespace ManagerSys.Domain.Shared.PageModel
     /// <summary>
     /// 返回信息基类
     /// </summary>
-    public class BasePage
+    public class BasePage<T>
     {
 
         /// <summary>
@@ -26,5 +26,7 @@ namespace ManagerSys.Domain.Shared.PageModel
         /// 显示信息
         /// </summary>
         public string Message { get; set; }
+
+        public T Data { get; set; }
     }
 }

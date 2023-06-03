@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <BaseOutputPath></BaseOutputPath>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
@@ -27,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ManagerSys.Application\ManagerSys.Application.csproj" />
     <ProjectReference Include="..\ManagerSys.EntityFrameworkCore\ManagerSys.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\ManagerSys.HttpApi\ManagerSys.HttpApi.csproj" />
   </ItemGroup>

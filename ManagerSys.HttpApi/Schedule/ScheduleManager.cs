@@ -1,23 +1,19 @@
-﻿using LogDashboard.Ioc;
+﻿using ManagerSys.Application;
+using ManagerSys.Application.Contracts.Schedule;
+using ManagerSys.Application.Contracts.ScheduleHttpOption;
+using ManagerSys.Domain.Shared.QuartzNet;
 using ManagerSys.Domian.HostSchedule;
 using ManagerSys.Domian.Schedule;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Logging;
+using ManagerSys.HttpApi.AppStart;
+using Microsoft.Extensions.DependencyInjection;
+using Quartz;
+using Quartz.Impl;
 using Quartz.Impl.Matchers;
 using Quartz.Impl.Triggers;
-using Quartz.Impl;
-using Quartz;
+using Serilog;
 using System.Collections.Specialized;
-using ManagerSys.Host.AppStart;
-using ManagerSys.Domain.Shared.QuartzNet.Base;
-using ManagerSys.Application.Schedule;
-using ManagerSys.Application.Contracts.Schedule;
-using ManagerSys.Application;
-using ManagerSys.Application.Contracts.ScheduleHttpOption;
-using Microsoft.AspNetCore.JsonPatch.Operations;
-using ManagerSys.Domain.Shared.QuartzNet;
 
-namespace ManagerSys.Host.Schedule
+namespace ManagerSys.HttpApi.Schedule
 {
     public class ScheduleManager : ApplicationAppService
     {
@@ -61,7 +57,7 @@ namespace ManagerSys.Host.Schedule
                 await _scheduler.Clear();
 
                 //MarkNode(true);
-                //LogHelper.Info("任务调度平台初始化成功！");
+                Log.Information("任务调度平台初始化成功");
                 //启动系统任务
                 await Start<TaskClearJob>("task-clear", "0 0/1 * * * ? *");
                 //恢复任务
@@ -69,7 +65,7 @@ namespace ManagerSys.Host.Schedule
             }
             catch (Exception ex)
             {
-                //LogHelper.Error("任务调度平台初始化失败！", ex);
+                Log.Information("任务调度平台初始化失败：" + ex.Message);
             }
         }
         /// <summary>
@@ -87,11 +83,11 @@ namespace ManagerSys.Host.Schedule
                     await _scheduler.Shutdown(true);
                     _scheduler = null;
                 }
-                //LogHelper.Info("任务调度平台已经停止！");
+                Log.Information("任务调度平台已经停止！");
             }
             catch (Exception ex)
             {
-                //LogHelper.Error("任务调度平台停止失败！", ex);
+                Log.Error("任务调度平台停止失败！", ex);
             }
         }
 
@@ -120,7 +116,7 @@ namespace ManagerSys.Host.Schedule
                     }
                     catch (SchedulerException sexp)
                     {
-                        //LogHelper.Error($"任务启动失败！开始第{i + 1}次重试...", sexp, context.Schedule.Id);
+                        Log.Error($"任务启动失败！开始第{i + 1}次重试...", sexp, context.Schedule.Id);
                     }
                 }
                 //最后一次尝试
@@ -129,12 +125,12 @@ namespace ManagerSys.Host.Schedule
             }
             catch (SchedulerException sexp)
             {
-                //LogHelper.Error($"任务所有重试都失败了，已放弃启动！", sexp, context.Schedule.Id);
+                Log.Error($"任务所有重试都失败了，已放弃启动！", sexp, context.Schedule.Id);
                 return false;
             }
             catch (Exception exp)
             {
-                // LogHelper.Error($"任务启动失败！", exp, context.Schedule.Id);
+                Log.Error($"任务启动失败！", exp, context.Schedule.Id);
                 return false;
             }
         }
@@ -144,7 +140,7 @@ namespace ManagerSys.Host.Schedule
         /// </summary>
         /// <param name="sid"></param>
         /// <returns></returns>
-        public static async Task<bool> Pause(Guid sid)
+        public async Task<bool> Pause(Guid sid)
         {
             try
             {
@@ -164,14 +160,14 @@ namespace ManagerSys.Host.Schedule
                     }
                     //发送取消信号
                     instance?.CancellationTokenSource.Cancel();
-                    //LogHelper.Warn($"任务已经暂停运行！", sid);
+                    Log.Warning($"任务已经暂停运行！", sid);
                     return true;
                 }
                 return false;
             }
             catch (Exception exp)
             {
-                //LogHelper.Error($"任务暂停运行失败！", exp, sid);
+                Log.Error($"任务暂停运行失败！", exp, sid);
                 return false;
             }
         }
@@ -181,7 +177,7 @@ namespace ManagerSys.Host.Schedule
         /// </summary>
         /// <param name="sid"></param>
         /// <returns></returns>
-        public static async Task<bool> Resume(Guid sid)
+        public async Task<bool> Resume(Guid sid)
         {
             try
             {
@@ -198,14 +194,14 @@ namespace ManagerSys.Host.Schedule
 
                     //恢复任务继续执行
                     await _scheduler.ResumeJob(jk, token);
-                    //LogHelper.Info($"任务已经恢复运行！", sid);
+                    Log.Information($"任务已经恢复运行！", sid);
                     return true;
                 }
                 return false;
             }
             catch (Exception exp)
             {
-                //LogHelper.Error($"任务恢复运行失败！", exp, sid);
+                Log.Error($"任务恢复运行失败！", exp, sid);
                 return false;
             }
         }
@@ -215,7 +211,7 @@ namespace ManagerSys.Host.Schedule
         /// </summary>
         /// <param name="sid"></param>
         /// <returns></returns>
-        public static async Task<bool> Stop(Guid sid)
+        public async Task<bool> Stop(Guid sid)
         {
             try
             {
@@ -241,12 +237,12 @@ namespace ManagerSys.Host.Schedule
                     //发送取消信号
                     instance?.CancellationTokenSource.Cancel();
                 }
-                //LogHelper.Info($"任务已经停止运行！", sid);
+                Log.Information($"任务已经停止运行！", sid);
                 return true;
             }
             catch (Exception exp)
             {
-                //LogHelper.Error($"任务停止失败！", exp, sid);
+                Log.Error($"任务停止失败！", exp, sid);
                 return false;
             }
         }
@@ -255,7 +251,7 @@ namespace ManagerSys.Host.Schedule
         ///立即运行一次任务
         /// </summary>
         /// <param name="sid"></param>
-        public static async Task<bool> RunOnce(Guid sid)
+        public async Task<bool> RunOnce(Guid sid)
         {
             JobKey jk = new JobKey(sid.ToString().ToLower());
             if (await _scheduler.CheckExists(jk))
@@ -265,7 +261,7 @@ namespace ManagerSys.Host.Schedule
             }
             else
             {
-                //LogHelper.Error($"_scheduler.CheckExists=false", sid);
+                Log.Error($"_scheduler.CheckExists=false", sid);
             }
             return false;
         }
@@ -277,7 +273,7 @@ namespace ManagerSys.Host.Schedule
         /// <param name="identity"></param>
         /// <param name="cronExp"></param>
         /// <returns></returns>
-        public static async Task Start<T>(string identity, string cronExp) where T : IJob
+        public  async Task Start<T>(string identity, string cronExp) where T : IJob
         {
             IJobDetail job = JobBuilder.Create<T>().WithIdentity(identity).Build();
             CronTriggerImpl trigger = new CronTriggerImpl
@@ -292,7 +288,7 @@ namespace ManagerSys.Host.Schedule
 
         #region 私有方法
 
-        private static async Task Start(IHosSchedule schedule)
+        private  async Task Start(IHosSchedule schedule)
         {
             JobDataMap map = new JobDataMap
             {
@@ -311,22 +307,23 @@ namespace ManagerSys.Host.Schedule
                 ITrigger trigger = GetTrigger(schedule.Schedule);
                 await _scheduler.ScheduleJob(job, trigger, schedule.CancellationTokenSource.Token);
 
-                //using (var scope = new Core.ScopeDbContext())
-                //{
-                //    var db = scope.GetDbContext();
-                //    var task = db.Schedules.FirstOrDefault(x => x.Id == schedule.Main.Id);
-                //    if (task != null)
-                //    {
-                //        task.NextRunTime = TimeZoneInfo.ConvertTimeFromUtc(trigger.GetNextFireTimeUtc().Value.UtcDateTime, TimeZoneInfo.Local);
-                //        await db.SaveChangesAsync();
-                //    }
-                //}
+                //更新下次运行时间
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    var scheduleService = scope.ServiceProvider.GetService<IScheduleService>();
+                    var scheEntity = await scheduleService.GetScheduleById(schedule.Schedule.Id);
+                    if (scheEntity != null)
+                    {
+                        scheEntity.NextRunTime = TimeZoneInfo.ConvertTimeFromUtc(trigger.GetNextFireTimeUtc().Value.UtcDateTime, TimeZoneInfo.Local);
+                        await scheduleService.Update(scheEntity);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 throw new SchedulerException(ex);
             }
-            // LogHelper.Info($"任务[{schedule.Main.Title}]启动成功！", schedule.Main.Id);
+            Log.Information($"任务[{schedule.Schedule.Title}]启动成功！", schedule.Schedule.Id);
 
             _ = Task.Run(async () =>
             {
@@ -457,19 +454,18 @@ namespace ManagerSys.Host.Schedule
         }
 
 
-        private static void StartedEvent(Guid sid, DateTime? nextRunTime)
+        /// <summary>
+        /// 监听
+        /// </summary>
+        /// <param name="scheduleId"></param>
+        /// <param name="nextRunTime"></param>
+        private void StartedEvent(Guid scheduleId, DateTime? nextRunTime)
         {
-            //using (var scope = new Core.ScopeDbContext())
-            //{
-            //    var db = scope.GetDbContext();
-            //    //每次运行成功后更新任务的运行情况
-            //    var task = db.Schedules.FirstOrDefault(x => x.Id == sid);
-            //    if (task == null) return;
-            //    task.LastRunTime = DateTime.Now;
-            //    task.NextRunTime = nextRunTime;
-            //    task.TotalRunCount += 1;
-            //    db.SaveChanges();
-            //}
+            using (var scope = _serviceProvider.CreateScope())
+            {
+                var scheduleService = scope.ServiceProvider.GetService<IScheduleService>();
+                scheduleService.StartedEvent(scheduleId);
+            }
         }
 
         private async void RunningRecovery()

@@ -17,6 +17,7 @@ using Quartz.Impl.Matchers;
 using ManagerSys.Domain.Shared.Enums;
 using System.Security.Cryptography;
 using LogDashboard.Repository;
+using ManagerSys.Domain.Shared.PageModel;
 
 namespace ManagerSys.Application.Schedule
 {
@@ -60,12 +61,12 @@ namespace ManagerSys.Application.Schedule
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<ScheduleEntity> GetScheduleById(Guid Id)
+        public async Task<ScheduleEntity> GetScheduleById(Guid scheduleId)
         {
             return (await _scheduleRepository.GetQueryableAsync())
                 .WhereIf(true, x => x.Status != (int)ScheduleStatus.Deleted)
                  .WhereIf(true, x => !x.IsDeleted)
-                .WhereIf(true, x => x.Id == Id)?.FirstOrDefault();
+                .WhereIf(true, x => x.Id == scheduleId)?.FirstOrDefault();
         }
 
         /// <summary>
@@ -75,38 +76,57 @@ namespace ManagerSys.Application.Schedule
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
         [UnitOfWork]
-        public async Task<ScheduleEntity> Add(ScheduleAddDto model)
+        public async Task<BasePage<ScheduleEntity>> Add(ScheduleAddDto model)
         {
+            var basePage = new BasePage<ScheduleEntity>() { Code = 200, Message = "添加成功" };
             var scheModel = ObjectMapper.Map<ScheduleAddDto, ScheduleEntity>(model);
-            return await _scheduleRepository.InsertAsync(scheModel);
+            scheModel.Status = (int)ScheduleStatus.Stop;
+            var scheEntity = await _scheduleRepository.InsertAsync(scheModel);
+            var optionEntity = ObjectMapper.Map<ScheduleAddDto, ScheduleHttpOptionEntity>(model);
+            optionEntity.ScheduleId = scheEntity.Id;
+            await _scheduleHttpOptionRepository.InsertAsync(optionEntity);
+            return basePage;
         }
 
 
         /// <summary>
-        /// 新增调度任务
+        /// 修改调度任务
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        [UnitOfWork]
-        public async Task<ScheduleEntity> Update(ScheduleAddDto model)
+        public async Task<ScheduleEntity> Update(ScheduleEntity model)
         {
-            var scheModel = ObjectMapper.Map<ScheduleAddDto, ScheduleEntity>(model);
-            return await _scheduleRepository.UpdateAsync(scheModel);
+            return await _scheduleRepository.UpdateAsync(model);
         }
 
 
         /// <summary>
-        /// 新增调度任务
+        /// 删除调度任务
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        [UnitOfWork]
-        public async void Delete(ScheduleAddDto model)
+        public async void Delete(Guid scheduleId)
         {
-            var scheModel = ObjectMapper.Map<ScheduleAddDto, ScheduleEntity>(model);
-            await _scheduleRepository.DeleteAsync(scheModel);
+            await _scheduleRepository.DeleteAsync(scheduleId);
+        }
+
+
+        /// <summary>
+        /// 任务监听
+        /// </summary>
+        /// <param name="scheduleId"></param>
+        /// <param name="nextRunTime"></param>
+        public async void StartedEvent(Guid scheduleId, DateTime? nextRunTime = null)
+        {
+            //每次运行成功后更新任务的运行情况
+            var task = await _scheduleRepository.GetAsync(x => x.Id == scheduleId);
+            if (task == null) return;
+            task.LastRunTime = DateTime.Now;
+            task.NextRunTime = nextRunTime;
+            task.TotalRunCount += 1;
+            await _scheduleRepository.UpdateAsync(task);
         }
     }
 }
